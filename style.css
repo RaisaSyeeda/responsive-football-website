@@ -1,0 +1,15 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.link-button{
+    text-decoration: none;
+    background-color: #E02C6D;
+    color:aliceblue;
+    font-weight: 500;
+    padding: 10px 30px;
+    
+}
+.arrow{
+    color: aliceblue;
+    
+}
