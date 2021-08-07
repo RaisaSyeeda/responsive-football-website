@@ -1,15 +1,236 @@
-body{
-    font-family: 'Poppins', sans-serif;
+/* -------------------
+    common elements
+----------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-.link-button{
+/* -------------------
+    top banner
+----------------------*/
+header {
+    background-color: #2d25a0;
+    height: 100vh;
+    margin-bottom: 70px;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.watch-live {
+    background-color: #e02c6d;
+    border: none;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 300ms;
+}
+.watch-live a {
+    display: inline-block;
     text-decoration: none;
-    background-color: #E02C6D;
-    color:aliceblue;
-    font-weight: 500;
-    padding: 10px 30px;
-    
+    color: #ffffff;
 }
-.arrow{
-    color: aliceblue;
-    
+.watch-live:hover {
+    transform: translateX(5px) scale(1.2);
+}
+/* -------------------
+    header section
+----------------------*/
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+    color: #ffffff;
+}
+.header-text h1 {
+    font-size: 64px;
+    margin: 0;
+}
+.header-text {
+    width: 50%;
+}
+.header-img {
+    width: 48%;
+    position: relative;
+}
+.football-player {
+    animation: player 3s 1s alternate infinite;
+}
+.football {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: 85px;
+    left: 30px;
+    animation: football 6s 2s infinite;
+}
+/*----------------------
+    players section
+-----------------------*/
+.players,.news-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 5em;
+}
+.player, .news, .moment{
+    padding: 15px;
+    border-radius: 0px;
+    background: #ffffff;
+    box-shadow: 6px 6px 12px #ededed, -6px -6px 12px #f3f3f3;
+}
+.player img {
+    transition: all 800ms;
+}
+.player img:hover {
+    transform: scale(1.1);
+}
+.player p {
+    color: #6c6c6c;
+}
+
+
+/*----------------------
+    news section
+-----------------------*/
+.heading{
+    font-size: 60px;
+    font-weight: 700;
+    color: brown;
+    text-align: center;
+}
+
+.news-section a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+/*----------------------
+    best moments
+-----------------------*/
+.best-moments{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 5em;
+}
+
+/*----------------------
+    channels
+-----------------------*/
+.watch-us{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 5em;
+}
+.channels{
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
+/*----------------------
+        footer
+-----------------------*/
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+    padding-top: 3em;
+}
+.footer-image {
+    width: 300px;
+}
+.icons{
+    color:#6c6c6c;
+    height: 32px;
+    width: 32px;
+}
+
+/*----------------------
+     animation
+-----------------------*/
+@keyframes player {
+ 0% {
+     transform: rotate(0);
+ }
+ 100% {
+     transform: rotate(20deg);
+ }
+}
+@keyframes football {
+ 0% {
+     transform: translateX(0px);
+ }
+ 50% {
+    transform: translateY(-400px) translateX(-400px);
+ }
+}
+
+/* ----------------------------------------
+      Media queries Mobile Devices
+------------------------------------------ */
+@media screen and (max-width: 688px) {
+ 
+ .header-content {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+ }
+ .header-text {
+     width: 100%;
+ }
+ .header-text h1 {
+    font-size: 2.5rem;
+ }
+ .header-img {
+    width: 90%;
+    margin-top: 2em;
+ }
+ .players,.news-section,.best-moments{
+    grid-template-columns: repeat(1, 1fr);
+ }
+ .football {
+    height: 50px;
+    width: 50px;
+    top: 35px;
+    left: 10px;
+ }
+}
+
+/* ----------------------------------------
+        Media Queries Tab Devices 
+------------------------------------------- */
+@media screen and (min-width: 688px) and (max-width: 992px) {
+
+ .header-content {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+ }
+ .header-text {
+    width: 100%;
+ }
+ .header-text h1 {
+     font-size: 2.5rem;
+ }
+ .header-img {
+    width: 90%;
+    margin-top: 2em;
+ }
+ .players, .news-section, .best-moments{
+     grid-template-columns: repeat(2, 1fr);
+ }
 }
